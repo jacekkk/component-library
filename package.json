@@ -1,0 +1,52 @@
+{
+  "name": "@jacekkk/component-library",
+  "version": "0.1.0",
+  "description": "Personal component library",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": ["dist"],
+  "typings": "dist/index.d.ts",
+  "repository": "https://github.com/jacekkk/component-library",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build-watch": "rollup -c -w",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@storybook/addon-actions": "^6.3.2",
+    "@storybook/addon-essentials": "^6.3.2",
+    "@storybook/addon-links": "^6.3.2",
+    "@storybook/react": "^6.3.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "jest": "^27.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.52.7",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {}
+}
