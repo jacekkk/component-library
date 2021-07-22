@@ -1,25 +1,30 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import { Button } from './Button';
+import React from 'react'
+import { render, fireEvent, screen } from '@testing-library/react'
+import { Button } from './Button'
 
-test('renders button with a correct label', () => {
-  render(<Button label='Submit'/>);
-  const button = screen.getByText(/Submit/);
-  expect(button).toBeInTheDocument();
-});
+describe('Button', () => {
+  test('renders button with a correct label', () => {
+    render(<Button data-testid="btn" label="Submit" />)
+    const button = screen.getByTestId('btn')
 
-test('allows for onClick handler to be passed in', () => {
-  const onButtonClick = jest.fn()
+    expect(button).toBeInTheDocument()
+    expect(button).toHaveTextContent(/^Submit$/)
+  })
 
-  render(<Button label='Submit' onClick={onButtonClick}/>);
-  const button = screen.getByText(/Submit/);
-  fireEvent.click(button);
+  test('allows for onClick handler to be passed in', () => {
+    const onButtonClick = jest.fn()
 
-  expect(onButtonClick).toHaveBeenCalled();
-});
+    render(<Button data-testid="btn" label="Submit" onClick={onButtonClick} />)
+    const button = screen.getByTestId('btn')
+    fireEvent.click(button)
 
-test('can be disabled', () => {
-  render(<Button label='Submit' disabled/>);
-  const button = screen.getByText(/Submit/);
-  expect(button).toBeDisabled();
-});
+    expect(onButtonClick).toHaveBeenCalled()
+  })
+
+  test('can be disabled', () => {
+    render(<Button data-testid="btn" label="Submit" disabled />)
+    const button = screen.getByTestId('btn')
+
+    expect(button).toBeDisabled()
+  })
+})
